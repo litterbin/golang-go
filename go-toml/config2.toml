@@ -1,0 +1,8 @@
+[[run]]
+pattern="*.go"
+cmd="go get -v"
+
+[[run]]
+pattern="*.py"
+cmd="python $1"
+

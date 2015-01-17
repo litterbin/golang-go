@@ -1,0 +1,13 @@
+[run.go]
+pattern="*.go"
+cmd="go run $1"
+
+[run.py]
+pattern="*.py"
+env=[
+    "PYTHONPATH=~/"
+]
+cmd=[
+    "python setup.py",
+    "python $1"
+]

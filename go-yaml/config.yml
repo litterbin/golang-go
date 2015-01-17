@@ -1,0 +1,4 @@
+run:
+    "*.go":
+        - "go get -v"
+        - "go run $1"
