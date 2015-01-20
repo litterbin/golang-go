@@ -34,3 +34,23 @@ func TestSimple(t *testing.T) {
 	}
 
 }
+
+func TestFunc(t *testing.T) {
+	funcMap := template.FuncMap{
+		"title": strings.Title,
+	}
+
+	tmpl, err := template.New("test").Funcs(funcMap).ParseFiles("test.tmpl")
+	if err != nil {
+		t.Error(err)
+	}
+
+	result := bytes.NewBufferString("")
+	err = tmpl.Execute(result, "the book")
+	if err != nil {
+		t.Error(err)
+	} else {
+		t.Log(result)
+	}
+
+}
