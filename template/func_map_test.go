@@ -35,12 +35,12 @@ func TestSimple(t *testing.T) {
 
 }
 
-func TestFunc(t *testing.T) {
+func TestFuncWithTmplFile(t *testing.T) {
 	funcMap := template.FuncMap{
 		"title": strings.Title,
 	}
 
-	tmpl, err := template.New("test").Funcs(funcMap).ParseFiles("test.tmpl")
+	tmpl, err := template.New("test.tmpl").Funcs(funcMap).ParseFiles("test.tmpl")
 	if err != nil {
 		t.Error(err)
 	}
