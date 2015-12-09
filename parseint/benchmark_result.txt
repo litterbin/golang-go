@@ -1,0 +1,30 @@
+
+$lscpu
+Model name:            Intel(R) Core(TM) i7-4712HQ CPU @ 2.30GHz
+
+$uname -a
+Linux booker 4.2.0-18-generic #22-Ubuntu SMP Fri Nov 6 18:25:50 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+
+$go version 
+go version go1.5.2 linux/amd64
+
+
+$go test -bench . 
+PASS
+Benchmark_parseUintBytes-8      100000000           20.2 ns/op         0 B/op          0 allocs/op
+Benchmark_parseUintStrconv-8    30000000            52.8 ns/op        16 B/op          1 allocs/op
+Benchmark_parseUintStrUnsafe-8  100000000           11.2 ns/op         0 B/op          0 allocs/op
+ok      golang-go/parseint  4.833s
+
+----
+
+$go version 
+go version go1.4.2 linux/amd64
+
+$go test -bench . 
+PASS
+Benchmark_parseUintBytes    100000000           19.2 ns/op         0 B/op          0 allocs/op
+Benchmark_parseUintStrconv  30000000            51.0 ns/op         1 B/op          1 allocs/op
+Benchmark_parseUintStrUnsafe    100000000           21.0 ns/op         0 B/op          0 allocs/op
+ok      golang-go/parseint  5.645s
+
