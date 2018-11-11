@@ -26,8 +26,21 @@ func TestASTGen(t *testing.T) {
 
 func declMethod(name string) ast.Decl {
 	return &ast.FuncDecl{
+		Recv: fields(field("s", ptr(ast.NewIdent(name)))),
 		Name: ast.NewIdent(name),
 		Type: methodType(),
+		Body: declMethodBody(),
+	}
+}
+
+func declMethodBody() *ast.BlockStmt {
+	body := declMethodBodyBase()
+	return body
+}
+
+func declMethodBodyBase() *ast.BlockStmt {
+	return &ast.BlockStmt{
+		List: []ast.Stmt{},
 	}
 }
 
@@ -62,4 +75,8 @@ func field(name string, t ast.Expr) *ast.Field {
 		Names: names,
 		Type:  t,
 	}
+}
+
+func ptr(expr ast.Expr) ast.Expr {
+	return &ast.StarExpr{X: expr}
 }
