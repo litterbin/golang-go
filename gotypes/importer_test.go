@@ -30,7 +30,9 @@ func TestImporter(t *testing.T) {
 		}
 
 		fields := scanStructFields(s)
-		t.Logf("%v.fields:%v", s, fields)
+		for _, f := range fields {
+			t.Logf("field %v %v", f, f.Type())
+		}
 	}
 }
 
