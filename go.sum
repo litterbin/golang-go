@@ -1,2 +1,4 @@
 github.com/google/subcommands v1.0.1 h1:/eqq+otEXm5vhfBrbREPCSVQbvofip6kIz+mX5TUH7k=
 github.com/google/subcommands v1.0.1/go.mod h1:ZjhPrFU+Olkh9WazFPsl27BQ4UPiG37m3yTrtFlrHVk=
+gopkg.in/src-d/go-parse-utils.v1 v1.1.2 h1:O54LA4vEIHe7U1i57Um3itXx5f7ks94M8ggJMz3vBxA=
+gopkg.in/src-d/go-parse-utils.v1 v1.1.2/go.mod h1:OHhBj+ncf7p/gXAcZ+Cgtt+7u1Y4YLxpL8pTlx/Xf2c=
