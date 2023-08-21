@@ -1,13 +1,16 @@
 package main
 
-import "golang.org/x/exp/inotify"
-import "log"
+import (
+	"log"
+
+	"github.com/fsnotify/fsnotify"
+)
 
 func main() {
 
 	path := "/tmp"
 
-	watcher, err := inotify.NewWatcher()
+	watcher, err := fsnotify.NewWatcher()
 	if err != nil {
 		log.Fatal(err)
 	}
